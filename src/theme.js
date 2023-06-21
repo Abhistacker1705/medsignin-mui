@@ -38,7 +38,7 @@ const theme = createTheme({
       fontWeight: 400,
     },
     h2: {
-      fontSize: { mobile: "", tablet: "2.75rem" },
+      fontSize: "2.75rem",
       fontWeight: 700,
     },
     h3: {
