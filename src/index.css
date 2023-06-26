@@ -7,6 +7,18 @@ html {
   html {
     font-size: 70%;
   }
+  .download-images {
+    width: 7.8rem;
+    aspect-ratio: initial;
+  }
+  .feature-images {
+    width: 3.25rem;
+    aspect-ratio: 1;
+  }
+  .vajra-logo {
+    width: 4.5rem;
+    aspect-ratio: initial;
+  }
 }
 body {
   min-height: 100vh;
@@ -14,4 +26,12 @@ body {
 }
 #root {
   min-height: 100vh;
+}
+.feature-images {
+  width: 5.5rem;
+  aspect-ratio: 1;
+}
+.download-images {
+  width: 11.5rem;
+  aspect-ratio: initial;
 }

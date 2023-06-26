@@ -26,7 +26,11 @@ const Navbar = () => {
         padding: { mobile: "1.25rem 1rem", tablet: "1.25rem 4rem" },
       }}>
       <Stack direction="row" flexBasis="42%">
-        <img src={VajraLogo} alt="Vajra for Biomedical operations tracking" />
+        <img
+          className="vajra-logo"
+          src={VajraLogo}
+          alt="Vajra for Biomedical operations tracking"
+        />
         <Link
           underline="hover"
           marginLeft="5.5rem"

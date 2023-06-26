@@ -22,7 +22,7 @@ const Footer = () => {
           gap: { mobile: "1rem", laptop: "4rem" },
           alignSelf: "self-start",
         }}>
-        <img src={VajraLogo} alt="Vajra Footer" />
+        <img className="vajra-logo" src={VajraLogo} alt="Vajra Footer" />
         <Typography variant="body2" color="text.primary">
           © 2020 VAJRA, All Rights Reserved
         </Typography>

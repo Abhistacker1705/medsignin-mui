@@ -32,7 +32,11 @@ const FeatureBox = () => {
           sx={{
             display: "flex",
           }}>
-          <img src={DigitizeLogo} alt="Digitization done by Vajra" />
+          <img
+            className="feature-images"
+            src={DigitizeLogo}
+            alt="Digitization done by Vajra"
+          />
           <Box
             sx={{
               display: "flex",
@@ -41,7 +45,7 @@ const FeatureBox = () => {
               justifyContent: "space-around",
             }}>
             <Typography variant="h3">Digitize</Typography>
-            <Typography variant="subtitle1">
+            <Typography color="background.default" variant="subtitle1">
               A Bird eye view of the entire Biomedical Operations.
             </Typography>
           </Box>
@@ -50,7 +54,11 @@ const FeatureBox = () => {
           sx={{
             display: "flex",
           }}>
-          <img src={TrackLogo} alt="Tracking done by Vajra" />
+          <img
+            className="feature-images"
+            src={TrackLogo}
+            alt="Tracking done by Vajra"
+          />
           <Box
             sx={{
               display: "flex",
@@ -59,7 +67,7 @@ const FeatureBox = () => {
               justifyContent: "space-around",
             }}>
             <Typography variant="h3">Track</Typography>
-            <Typography variant="subtitle1">
+            <Typography color="background.default" variant="subtitle1">
               Track the product life cycle and service history.
             </Typography>
           </Box>
@@ -69,6 +77,7 @@ const FeatureBox = () => {
             display: "flex",
           }}>
           <img
+            className="feature-images"
             src={BioLogo}
             alt="Biomedical Budget calculation done by Vajra"
           />
@@ -80,7 +89,7 @@ const FeatureBox = () => {
               justifyContent: "space-around",
             }}>
             <Typography variant="h3">Biomedical Budget</Typography>
-            <Typography variant="subtitle1">
+            <Typography color="background.default" variant="subtitle1">
               Regulate and save budget through analysed data and informed.
             </Typography>
           </Box>

@@ -30,7 +30,12 @@ const SignInBox = () => {
         sx={{ marginTop: "1rem", marginBottom: "2rem" }}
       />
 
-      <Stack color="text.primary" rowGap="1rem" width="80%" alignSelf="center">
+      <Stack
+        component="form"
+        color="text.primary"
+        rowGap="1rem"
+        width="80%"
+        alignSelf="center">
         <Typography variant="h4" color="primary" marginBottom="1rem">
           Sign in to your account
         </Typography>
@@ -45,6 +50,7 @@ const SignInBox = () => {
                 border: "none",
                 boxShadow: "input",
               }}
+              required
               placeholder="xxxxxxxxxx"
               id="outlined-basic"
               variant="outlined"
@@ -61,6 +67,7 @@ const SignInBox = () => {
                 border: "none",
                 boxShadow: "input",
               }}
+              required
               placeholder="xxxxxxxxxx"
               id="outlined-basic"
               variant="outlined"
@@ -71,7 +78,7 @@ const SignInBox = () => {
             Forgot Password
           </Link>
         </Stack>
-        <Button variant="contained" color="primary" fullWidth>
+        <Button type="submit" variant="contained" color="primary" fullWidth>
           Sign In
         </Button>
       </Stack>
