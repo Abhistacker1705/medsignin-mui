@@ -2,14 +2,42 @@ import {
   Box,
   Button,
   Divider,
-  Link,
   Stack,
   TextField,
   Typography,
+  FormControlLabel,
+  Checkbox,
 } from "@mui/material";
-import React from "react";
+import LinkMUI from "@mui/material/Link";
+import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
 const SignInBox = () => {
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [passVisible, setPassVisible] = useState(false);
+  const [passwordError, setPasswordError] = useState(true);
+  const [emailError, setEmailError] = useState(true);
+  const [showErrors, setShowErrors] = useState(false);
+  useEffect(() => {
+    validateInputs();
+  }, [formData]);
+
+  //input validation
+  const validateInputs = () => {
+    if (formData.password.length >= 8) {
+      setPasswordError(false);
+    } else {
+      setPasswordError(true);
+    }
+    if (formData.email.includes(".") && formData.email.includes("@", 1)) {
+      setEmailError(false);
+    } else {
+      setEmailError(true);
+    }
+  };
+
+  //form submit handler
+
   return (
     <Box
       bgcolor="background.default"
@@ -26,7 +54,7 @@ const SignInBox = () => {
         Sign In
       </Typography>
       <Divider
-        color="divider"
+        color="#7A7A7A"
         sx={{ marginTop: "1rem", marginBottom: "2rem" }}
       />
 
@@ -50,7 +78,20 @@ const SignInBox = () => {
                 border: "none",
                 boxShadow: "input",
               }}
+              error={showErrors ? emailError : false}
+              helperText={
+                showErrors
+                  ? emailError
+                    ? "Should not be empty and should be valid email"
+                    : ""
+                  : ""
+              }
+              value={formData.email}
               required
+              type="email"
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               placeholder="xxxxxxxxxx"
               id="outlined-basic"
               variant="outlined"
@@ -67,20 +108,51 @@ const SignInBox = () => {
                 border: "none",
                 boxShadow: "input",
               }}
+              value={formData.password}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
               required
+              error={showErrors ? passwordError : false}
+              helperText={
+                showErrors
+                  ? passwordError
+                    ? "Minimum character length should be 8"
+                    : ""
+                  : ""
+              }
+              type={passVisible ? "text" : "password"}
               placeholder="xxxxxxxxxx"
               id="outlined-basic"
               variant="outlined"
               fullWidth
             />
+            <FormControlLabel
+              control={
+                <Checkbox onClick={() => setPassVisible(!passVisible)} />
+              }
+              label="Show Password"
+            />
           </Box>
-          <Link variant="subtitle2" underline="hover" color="error">
+          <LinkMUI variant="subtitle2" underline="hover" color="error">
             Forgot Password
-          </Link>
+          </LinkMUI>
         </Stack>
-        <Button type="submit" variant="contained" color="primary" fullWidth>
-          Sign In
-        </Button>
+        <Link to={passwordError || emailError ? "/" : `/${formData.email}`}>
+          <Button
+            onClick={() => setShowErrors(true)}
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth>
+            Sign In
+          </Button>
+        </Link>
+
+        <Typography variant="subtitle2" alignSelf="center">
+          New to vajra?
+          <LinkMUI color="secondary.main">Sign UP Now</LinkMUI>
+        </Typography>
       </Stack>
     </Box>
   );

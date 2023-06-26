@@ -86,7 +86,7 @@ const FeatureBox = () => {
               display: "flex",
               flexDirection: "column",
               marginLeft: "2.25rem",
-              justifyContent: "space-around",
+              justifyContent: "space-between",
             }}>
             <Typography variant="h3">Biomedical Budget</Typography>
             <Typography color="background.default" variant="subtitle1">

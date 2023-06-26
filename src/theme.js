@@ -28,7 +28,6 @@ const theme = createTheme({
       primary: "#2a2a2a",
       secondary: "#040707",
     },
-    divider: "#7a7a7a",
   },
   typography: {
     fontSize: 18,
